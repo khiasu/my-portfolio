@@ -31,6 +31,7 @@
   body {
     background: #000000;
     color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
 
@@ -40,7 +41,12 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent;
+    background: linear-gradient(90deg, #ffffff, #888888, #ffffff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
   }
   
   .gradient-border {
@@ -50,11 +56,18 @@
   }
   
   .glass-effect {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
   
   .text-glow {
