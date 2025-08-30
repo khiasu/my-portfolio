@@ -159,9 +159,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 If you have any questions or need help, feel free to reach out:
 
-- Email: hello@example.com
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
+- Email: khiasu2vis@gmail.com
+- LinkedIn:www.linkedin.com/in/khiasu2vis
+- GitHub: github.com/khiasu
 
 ---
 
