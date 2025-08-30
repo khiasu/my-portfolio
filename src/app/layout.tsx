@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Portfolio | Creative Developer & Designer",
   description: "Professional portfolio showcasing creative development, design, and innovative solutions. Explore my work, skills, and projects.",
   keywords: ["portfolio", "developer", "designer", "creative", "web development", "UI/UX"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  authors: [{ name: "Khiasu" }],
+  creator: "Khiasu",
   openGraph: {
     type: "website",
     locale: "en_US",

@@ -659,7 +659,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
           >
             <motion.a
-              href="mailto:hello@example.com"
+              href="mailto:khiasu2vis@gmail.com"
               className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-full overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -677,7 +677,9 @@ export default function Home() {
             </motion.a>
             
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/khiasu2vis/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 backdrop-blur-md bg-white/10 border border-white/20 font-bold rounded-full hover:bg-white/20 transition-all duration-300"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255,255,255,0.3)" }}
               whileTap={{ scale: 0.95 }}
@@ -697,8 +699,8 @@ export default function Home() {
             className="flex justify-center gap-8"
           >
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: Github, href: "https://github.com/khiasu", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/khiasu2vis/", label: "LinkedIn" },
               { icon: Twitter, href: "#", label: "Twitter" },
             ].map((social, index) => (
               <motion.a
