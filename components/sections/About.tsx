@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, glassMorph, staggerContainer } from "@/lib/motion";
 import { useState } from "react";
+import Image from "next/image";
 
 /**
  * About section - interactive glass profile card
@@ -35,9 +36,11 @@ export function About() {
           >
             {/* Profile image */}
             <div className="aspect-square w-full max-w-sm mx-auto mb-8 rounded-glass overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
-              <img 
+              <Image 
                 src="/profile-pic.jpeg" 
                 alt="Khiasu 2vis"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover"
               />
             </div>

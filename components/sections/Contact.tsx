@@ -145,7 +145,7 @@ export function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-green-400 text-center font-light"
               >
-                Message sent successfully! I'll get back to you soon.
+                Message sent successfully! I&apos;ll get back to you soon.
               </motion.p>
             )}
             
