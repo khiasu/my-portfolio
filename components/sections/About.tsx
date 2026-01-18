@@ -33,11 +33,13 @@ export function About() {
             whileTap={{ scale: 0.98 }}
             className="glass glass-thick rounded-glass-lg p-12 glass-edge relative overflow-hidden"
           >
-            {/* Profile image placeholder */}
+            {/* Profile image */}
             <div className="aspect-square w-full max-w-sm mx-auto mb-8 rounded-glass overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
-              <div className="w-full h-full flex items-center justify-center text-accent/40 text-4xl">
-                Profile
-              </div>
+              <img 
+                src="/profile-pic.jpeg" 
+                alt="Khiasu 2vis"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Interactive tilt effect */}

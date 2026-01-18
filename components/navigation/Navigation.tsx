@@ -72,7 +72,7 @@ export function Navigation() {
           opacity: isScrolled ? 1 : 0,
         }}
         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:block"
+        className="fixed top-6 right-6 z-50 hidden md:block"
       >
         <div className="glass glass-thin rounded-glass px-8 py-4">
           <ul className="flex items-center gap-8">
