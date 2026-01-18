@@ -14,11 +14,33 @@ export function Contact() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - integrate with email API
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/maqqejon", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,10 +132,32 @@ export function Contact() {
               type="submit"
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full glass glass-thin rounded-glass-sm px-6 py-4 bg-accent/10 border-accent/30 text-accent font-light hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 tracking-[-0.01em]"
+              disabled={isSubmitting}
+              className="w-full glass glass-thin rounded-glass-sm px-6 py-4 bg-accent/10 border-accent/30 text-accent font-light hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 tracking-[-0.01em] disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
+
+            {/* Status messages */}
+            {submitStatus === "success" && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-green-400 text-center font-light"
+              >
+                Message sent successfully! I'll get back to you soon.
+              </motion.p>
+            )}
+            
+            {submitStatus === "error" && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-red-400 text-center font-light"
+              >
+                Something went wrong. Please try again.
+              </motion.p>
+            )}
           </form>
         </motion.div>
 
