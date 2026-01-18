@@ -35,7 +35,7 @@ export function Contact() {
           className="text-center mb-20"
         >
           <h2 className="text-5xl md:text-6xl font-extralight mb-4 tracking-[-0.02em]">Contact</h2>
-          <p className="text-white/50 text-lg md:text-xl font-light">Let's work together</p>
+          <p className="text-white/50 text-lg md:text-xl font-light">Let&apos;s work together</p>
         </motion.div>
 
         <motion.div

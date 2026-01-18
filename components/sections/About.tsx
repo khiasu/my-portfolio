@@ -67,7 +67,7 @@ export function About() {
               variants={fadeInUp}
               className="text-white/80 text-lg md:text-xl leading-relaxed mb-6 font-light tracking-[-0.01em]"
             >
-              I'm a Full-Stack Developer passionate about building scalable,
+              I&apos;m a Full-Stack Developer passionate about building scalable,
               performant applications with modern web technologies. I focus on
               creating intuitive user experiences through clean code and thoughtful design.
             </motion.p>
@@ -78,7 +78,7 @@ export function About() {
             >
               Currently based in Dimapur, India, I specialize in full-stack
               development with expertise in both frontend and backend technologies.
-              I'm always eager to take on new challenges and contribute to meaningful projects.
+              I&apos;m always eager to take on new challenges and contribute to meaningful projects.
             </motion.p>
 
             {/* Details grid */}
