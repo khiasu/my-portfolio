@@ -19,8 +19,6 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       wheelMultiplier: 0.8, // Reduced multiplier for better control
       touchMultiplier: 1.5,
       infinite: false,
-      normalizeWheel: true, // Normalize wheel speed across browsers
-      syncTouch: true, // Sync touch with scroll
     });
 
     // Animation frame loop for smooth scrolling
