@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://khiasu-portfolio.vercel.app/sitemap.xml
+
+# Allow search engines to crawl all sections
+Allow: /#about
+Allow: /#skills  
+Allow: /#projects
+Allow: /#experience
+Allow: /#contact
