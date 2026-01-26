@@ -54,7 +54,7 @@ export function About() {
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               className="text-center"
             >
-              <h3 className="text-2xl md:text-3xl font-extralight mb-2 tracking-[-0.01em]">Khiasu 2vis</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 tracking-[-0.01em]">Khiasu <span className="text-accent">2vis</span></h3>
               <p className="text-white/55 text-sm md:text-base font-light">Full-Stack Developer</p>
             </motion.div>
           </motion.div>
@@ -63,7 +63,7 @@ export function About() {
           <motion.div variants={fadeInUp} className="space-y-6">
             <motion.h2
               variants={fadeInUp}
-              className="text-5xl md:text-6xl font-extralight mb-8 tracking-[-0.02em]"
+              className="text-5xl md:text-6xl font-bold mb-8 tracking-[-0.02em]"
             >
               About
             </motion.h2>
@@ -72,18 +72,16 @@ export function About() {
               variants={fadeInUp}
               className="text-white/80 text-lg md:text-xl leading-relaxed mb-6 font-light tracking-[-0.01em]"
             >
-              I&apos;m a Full-Stack Developer passionate about building scalable,
-              performant applications with modern web technologies. I focus on
-              creating intuitive user experiences through clean code and thoughtful design.
+              Full-stack developer building modern web applications with emphasis on 
+              clean architecture, performance, and intuitive user experiences. 
             </motion.p>
 
             <motion.p
               variants={fadeInUp}
               className="text-white/65 leading-relaxed text-base md:text-lg font-light"
             >
-              Currently based in Dimapur, India, I specialize in full-stack
-              development with expertise in both frontend and backend technologies.
-              I&apos;m always eager to take on new challenges and contribute to meaningful projects.
+              Based in Nagaland, India, working across frontend and backend technologies. 
+              Focused on delivering practical solutions that hold their ground
             </motion.p>
 
             {/* Details grid */}
@@ -92,10 +90,10 @@ export function About() {
               className="grid grid-cols-2 gap-4 mt-10"
             >
               {[
-                { label: "Location", value: "Dimapur, India" },
+                { label: "Location", value: "Nagaland, India" },
                 { label: "Email", value: "khiasu2vis@gmail.com", isEmail: true },
                 { label: "Status", value: "Available" },
-                { label: "Experience", value: "Intern" },
+                { label: "Experience", value: "2+ years" },
               ].map((item, index) => (
                 <motion.div
                   key={item.label}

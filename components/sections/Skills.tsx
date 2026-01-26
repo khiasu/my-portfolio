@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 /**
- * Skills section - visual system, never lists
+ * Tech Stack section - professional overview
  * Interactive glass cards with depth
  */
 const skillCategories = [
@@ -44,8 +44,8 @@ export function Skills() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight mb-4 tracking-[-0.02em]">Skills</h2>
-          <p className="text-white/50 text-lg md:text-xl font-light">Visual system of expertise</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-[-0.02em]">Tech Stack</h2>
+          <p className="text-white/50 text-lg md:text-xl font-light">Tools and technologies</p>
         </motion.div>
 
         <motion.div

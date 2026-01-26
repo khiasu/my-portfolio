@@ -56,7 +56,7 @@ export function Contact() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight mb-4 tracking-[-0.02em]">Contact</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-[-0.02em]">Contact</h2>
           <p className="text-white/50 text-lg md:text-xl font-light">Let&apos;s work together</p>
         </motion.div>
 
@@ -65,9 +65,9 @@ export function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="glass glass-thick rounded-glass-lg p-8 md:p-12 glass-edge"
+          className="glass glass-thick rounded-glass-lg p-6 md:p-8 glass-edge"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
@@ -82,7 +82,7 @@ export function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full glass glass-thin rounded-glass-sm px-5 py-4 bg-white/5 border-white/10 focus:border-accent focus:outline-none transition-all duration-300 text-white placeholder-white/30 font-light"
+                className="w-full glass glass-thin rounded-glass-sm px-4 py-3 bg-white/5 border-white/10 focus:border-accent focus:outline-none transition-all duration-300 text-white placeholder-white/30 font-light"
                 placeholder="Your name"
                 required
               />
@@ -102,7 +102,7 @@ export function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full glass glass-thin rounded-glass-sm px-5 py-4 bg-white/5 border-white/10 focus:border-accent focus:outline-none transition-all duration-300 text-white placeholder-white/30 font-light"
+                className="w-full glass glass-thin rounded-glass-sm px-4 py-3 bg-white/5 border-white/10 focus:border-accent focus:outline-none transition-all duration-300 text-white placeholder-white/30 font-light"
                 placeholder="your.email@example.com"
                 required
               />
@@ -121,7 +121,7 @@ export function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                rows={6}
+                rows={4}
                 className="w-full glass glass-thin rounded-glass-sm px-4 py-3 bg-white/5 border-white/10 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/30 resize-none"
                 placeholder="Your message"
                 required
@@ -133,7 +133,7 @@ export function Contact() {
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
-              className="w-full glass glass-thin rounded-glass-sm px-6 py-4 bg-accent/10 border-accent/30 text-accent font-light hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 tracking-[-0.01em] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full glass glass-thin rounded-glass-sm px-5 py-3 bg-accent/10 border-accent/30 text-accent font-medium hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 tracking-[-0.01em] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
@@ -167,18 +167,39 @@ export function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-12 text-center space-y-2"
+          className="mt-8 text-center space-y-2"
         >
-          <p className="text-white/40 text-sm mb-4 font-light">Or reach out directly</p>
-          <a
+          <p className="text-white/60 text-base mb-4 font-medium">Or reach out directly</p>
+          <motion.a
             href="mailto:khiasu2vis@gmail.com"
-            className="text-accent hover:text-accent-light transition-colors text-lg font-light tracking-[-0.01em]"
+            className="group inline-flex items-center gap-3 text-accent hover:text-accent-light transition-all duration-300 text-xl font-light tracking-[-0.01em]"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            khiasu2vis@gmail.com
-          </a>
+            <motion.div
+              className="w-8 h-8 glass glass-thin rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </motion.div>
+            <span className="group-hover:tracking-wide transition-all duration-300">khiasu2vis@gmail.com</span>
+          </motion.a>
           
           {/* Social links */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-4 mt-6">
             <a
               href="https://github.com/khiasu"
               target="_blank"

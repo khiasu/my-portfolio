@@ -13,29 +13,29 @@ const projects = [
   {
     id: 1,
     title: "UniManagePro",
-    description: "A comprehensive university management system for handling student data, courses, and administrative tasks. Built with modern full-stack technologies.",
+    description: "A conceptual university resource management system that simplifies booking labs, sports facilities, and other resources. Eliminates complicated forms and prevents double-booking conflicts.",
     category: "Web",
     githubUrl: "https://github.com/khiasu/UniManagePro",
     technologies: ["Full-Stack", "Database", "Web Application"],
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80", // University/education themed
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80", // University management system
   },
   {
     id: 2,
     title: "AI Reverse CAPTCHA Solver",
-    description: "An AI-powered solution for solving CAPTCHA challenges using machine learning and computer vision techniques. Demonstrates advanced problem-solving capabilities.",
+    description: "A Deep Learning system that automatically recognizes and solves text-based CAPTCHAs with high accuracy. Features real-time human vs AI comparison.",
     category: "AI/ML",
     githubUrl: "https://github.com/khiasu/AI-Reverse-CAPTCHA-Solver",
-    technologies: ["AI", "Machine Learning", "Computer Vision"],
-    image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80", // AI/tech themed
+    technologies: ["AI", "Machine Learning", "Deep Learning"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80", // AI/ML neural network
   },
   {
     id: 3,
     title: "ByteCart E-Commerce",
-    description: "A modern e-commerce platform with seamless shopping experience, cart management, and payment integration. Built with scalable architecture.",
+    description: "A modern e-commerce platform with seamless shopping experience, cart management, and custom QR-based UPI payment integration.",
     category: "Web",
     githubUrl: "https://github.com/khiasu/bytecart-ecommerce",
     technologies: ["E-Commerce", "Full-Stack", "Payment Integration"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80", // E-commerce/shopping themed
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80", // E-commerce shopping
   },
 ];
 
@@ -55,8 +55,8 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight mb-4 tracking-[-0.02em]">Projects</h2>
-          <p className="text-white/50 text-lg md:text-xl font-light">Fullscreen case studies</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-[-0.02em]">Projects</h2>
+          <p className="text-white/50 text-lg md:text-xl font-light">Recent projects</p>
         </motion.div>
 
         <motion.div
@@ -83,11 +83,18 @@ export function Projects() {
                     src={project.image || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"}
                     alt={project.title}
                     fill
-                    className="object-cover blur-md scale-110"
+                    className="object-cover blur-sm scale-105"
                     unoptimized
                   />
                   {/* Dark overlay for better text readability */}
                   <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
+                  {/* Vignette effect */}
+                  <div 
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4) 100%)'
+                    }}
+                  />
                 </div>
                 
                 {/* Project name overlay */}
@@ -101,7 +108,7 @@ export function Projects() {
               {/* Content overlay */}
               <div className="p-6 md:p-8">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-white/40 uppercase tracking-[0.1em] font-medium">
+                  <span className="text-xs text-white/70 uppercase tracking-[0.1em] font-semibold bg-white/10 px-2 py-1 rounded-full">
                     {project.category}
                   </span>
                   {project.githubUrl && (
@@ -109,7 +116,7 @@ export function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent text-sm hover:text-accent-light transition-colors font-light"
+                      className="text-accent text-sm font-semibold hover:text-accent-light transition-colors bg-accent/10 px-2 py-1 rounded-lg"
                       initial={{ x: -10, opacity: 0 }}
                       whileHover={{ x: 0, opacity: 1 }}
                       onClick={(e) => e.stopPropagation()}
@@ -219,6 +226,39 @@ export function Projects() {
             </>
           )}
         </AnimatePresence>
+
+        {/* View More Projects Button */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mt-16"
+        >
+          <motion.a
+            href="https://github.com/khiasu?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 glass glass-thin rounded-glass-sm px-6 py-3 bg-accent/10 border-accent/30 text-accent font-medium hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 tracking-[-0.01em]"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View More Projects
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

@@ -12,13 +12,22 @@ const experiences = [
     year: "2025",
     role: "Full-Stack Developer Intern",
     company: "Techiehelp",
-    description: "Developed full-stack applications using modern web technologies. Worked on building scalable solutions and implementing best practices in software development.",
+    companyUrl: "https://www.techiehelp.in/intern/khiasuthong-t",
+    description: "Contributed to full-stack application development using modern web technologies. Focused on implementing scalable solutions and following software development best practices.",
   },
   {
     year: "2025",
     role: "Digital Electronics & VLSI Intern",
     company: "Codec Technologies",
-    description: "Gained hands-on experience in digital electronics and VLSI design. Worked on hardware-level projects and circuit design implementations.",
+    companyUrl: "https://codectechnologies.in/",
+    description: "Gained practical experience in digital electronics and VLSI design. Worked on hardware-level projects and circuit design implementations.",
+  },
+  {
+    year: "Present",
+    role: "Freelance Technical Support",
+    company: "Genesis Montessori School",
+    companyUrl: "https://share.google/M9YzG0KwwGoanK3Xp",
+    description: "Providing part-time technical support including book worksheet content editing, printing services, and computer maintenance. Supporting educational technology infrastructure and assisting with technical troubleshooting.",
   },
 ];
 
@@ -36,8 +45,8 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight mb-4 tracking-[-0.02em]">Experience</h2>
-          <p className="text-white/50 text-lg md:text-xl font-light">Timeline with morphing cards</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-[-0.02em]">Experience</h2>
+          <p className="text-white/50 text-lg md:text-xl font-light">Professional journey</p>
         </motion.div>
 
         <div className="relative">
@@ -77,7 +86,23 @@ export function Experience() {
                       <h3 className="text-xl md:text-2xl font-light text-white/95 mb-2 tracking-[-0.01em]">
                         {exp.role}
                       </h3>
-                      <p className="text-accent text-sm md:text-base font-light">{exp.company}</p>
+                      <motion.a 
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent text-sm md:text-base font-light hover:text-accent-light transition-colors inline-block"
+                        whileHover={{ scale: 1.05, x: 2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {exp.company}
+                        <motion.span
+                          initial={{ opacity: 0, x: -2 }}
+                          whileHover={{ opacity: 1, x: 0 }}
+                          className="inline-block ml-1"
+                        >
+                          ↗
+                        </motion.span>
+                      </motion.a>
                     </div>
                   </div>
                   <p className="text-white/65 leading-relaxed text-base md:text-lg font-light">{exp.description}</p>

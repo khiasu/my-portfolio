@@ -147,10 +147,10 @@ export function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 glass glass-thick rounded-glass-lg z-50 md:hidden p-8"
+              className="fixed top-0 right-0 h-full w-72 md:w-80 glass glass-thick rounded-l-2xl md:rounded-glass-lg z-50 md:hidden p-4 md:p-8"
             >
-              <nav className="mt-20">
-                <ul className="flex flex-col gap-6">
+              <nav className="mt-12 md:mt-20">
+                <ul className="flex flex-col gap-3 md:gap-6">
                   {navItems.map((item, index) => (
                     <motion.li
                       key={item.id}
@@ -160,10 +160,10 @@ export function Navigation() {
                     >
                       <button
                         onClick={() => handleNavClick(item.href)}
-                        className={`text-left text-lg font-light w-full py-3 transition-colors tracking-[-0.01em] ${
+                        className={`text-left text-sm md:text-lg font-light w-full py-2 md:py-3 px-2 md:px-0 rounded-lg transition-all tracking-[-0.01em] ${
                           activeSection === item.id
-                            ? "text-accent"
-                            : "text-white/70 hover:text-white"
+                            ? "text-accent bg-accent/10"
+                            : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
                       >
                         {item.label}

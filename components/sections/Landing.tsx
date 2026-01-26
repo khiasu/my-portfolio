@@ -23,6 +23,12 @@ export function Landing() {
   const lightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let rafId: number;
+    let targetX = 50;
+    let targetY = 50;
+    let currentX = 50;
+    let currentY = 50;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!lightRef.current) return;
       
@@ -30,16 +36,29 @@ export function Landing() {
       const { innerWidth, innerHeight } = window;
       
       // Convert to percentage
-      const xPercent = (clientX / innerWidth) * 100;
-      const yPercent = (clientY / innerHeight) * 100;
+      targetX = (clientX / innerWidth) * 100;
+      targetY = (clientY / innerHeight) * 100;
+    };
+
+    const updateLight = () => {
+      // Smooth interpolation with lerp
+      currentX += (targetX - currentX) * 0.1;
+      currentY += (targetY - currentY) * 0.1;
       
-      // Subtle movement with inertia
-      // Using RGB values directly: 100 200 255
-      lightRef.current.style.background = `radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(100, 200, 255, 0.15) 0%, transparent 50%)`;
+      if (lightRef.current) {
+        lightRef.current.style.background = `radial-gradient(circle at ${currentX}% ${currentY}%, rgba(100, 200, 255, 0.15) 0%, transparent 50%)`;
+      }
+      
+      rafId = requestAnimationFrame(updateLight);
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    rafId = requestAnimationFrame(updateLight);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -104,7 +123,7 @@ export function Landing() {
             transition={{ delay: 0.6, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed tracking-[-0.01em]"
           >
-            Crafting premium digital experiences with modern web technologies.
+ Building thoughtful solutions that bridge creativity and functionality.
           </motion.p>
         </motion.div>
       </motion.div>
